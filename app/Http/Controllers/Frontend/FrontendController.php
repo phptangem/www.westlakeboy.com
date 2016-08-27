@@ -6,7 +6,6 @@ use Illuminate\Http\Request;
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
-
 class FrontendController extends Controller
 {
     /**
@@ -15,5 +14,12 @@ class FrontendController extends Controller
     public function index()
     {
         return view('frontend.index');
+    }
+    /**
+     * 测试
+     */
+    public function test()
+    {
+        dd(\DB::raw('CURRENT_TIMESTAMP'));
     }
 }

@@ -17,7 +17,7 @@
                 </li>
                 <li><a href="contact.html">联系</a></li>
                 <li><a href="about.html">关于</a></li>
-                <li><a class="btn" href="signin.html">登陆 / 注册</a></li>
+                <li><a class="btn" href="{{ route('auth.register') }}">登陆 / 注册</a></li>
             </ul>
         </div><!--/.nav-collapse -->
     </div>

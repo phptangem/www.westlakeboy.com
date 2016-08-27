@@ -6,6 +6,7 @@ Route::group(['middleware'=>'web'],function(){
      */
     Route::group(['namespace'=>'Frontend'], function(){
         include(__DIR__.'/Routes/Frontend/Frontend.php');
+        include(__DIR__.'/Routes/Frontend/Access.php');
     });
 });
 

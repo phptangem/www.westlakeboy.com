@@ -25,19 +25,19 @@
                             <p class="text-center text-muted">如果您已经拥有账号, 请<a href="signin.html">登录</a>并编辑完善个人信息</p>
                             <hr>
 
-                            <form>
+                            {!! Form::open(['url'=>'register', 'class'=>'form-horizontal']) !!}
                                 <div class="top-margin">
                                     <label>姓名</label>
                                     <input type="text" class="form-control">
                                 </div>
                                 <div class="top-margin">
-                                    <label>邮箱 <span class="text-danger">*</span></label>
+                                    <label>邮箱 <span class="text-danger">*</span>@if(isset($errors)) {{ $errors->first('email') }} @endif</label>
                                     <input type="text" class="form-control">
                                 </div>
 
                                 <div class="row top-margin">
                                     <div class="col-sm-6">
-                                        <label>密码 <span class="text-danger">*</span></label>
+                                        <label>密码 <span class="text-danger">*</span>@if(isset($errors)) {{ $errors->first('password') }} @endif</label>
                                         <input type="text" class="form-control">
                                     </div>
                                     <div class="col-sm-6">
@@ -59,7 +59,7 @@
                                         <button class="btn btn-action" type="submit">注册</button>
                                     </div>
                                 </div>
-                            </form>
+                            {!! Form::close() !!}
                         </div>
                     </div>
 

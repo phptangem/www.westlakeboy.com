@@ -8,5 +8,6 @@ Route::group(['namespace'=>'Auth'], function(){
 
         //Registration routes
         Route::get('register','AuthController@showRegistrationForm')->name('auth.register');
+        Route::post('register','AuthController@register');
     });
 });

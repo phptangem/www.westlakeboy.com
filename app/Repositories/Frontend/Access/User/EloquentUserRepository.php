@@ -1,7 +1,7 @@
 <?php
 namespace  App\Repositories\Frontend\Access\User;
 
-class EloquentUserRepositories implements UserRepositoryContract
+class EloquentUserRepository implements UserRepositoryContract
 {
 
 }

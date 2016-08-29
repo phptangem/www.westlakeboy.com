@@ -22,27 +22,27 @@
                     <div class="panel panel-default">
                         <div class="panel-body">
                             <h3 class="thin text-center">欢迎注册账号</h3>
-                            <p class="text-center text-muted">如果您已经拥有账号, 请<a href="signin.html">登录</a>并编辑完善个人信息</p>
+                            <p class="text-center text-muted">如果您已经拥有账号, 请<a href="signin.html">登录</a>完善个人信息</p>
                             <hr>
 
                             {!! Form::open(['url'=>'register', 'class'=>'form-horizontal']) !!}
                                 <div class="top-margin">
-                                    <label>姓名</label>
-                                    <input type="text" class="form-control">
+                                    <label>用户名<span class="text-danger">*@if(isset($errors)) {{ $errors->first('name') }} @endif</span></label>
+                                    <input type="text" name="name" value="{{ old('name') }}" class="form-control" placeholder="用户名">
                                 </div>
                                 <div class="top-margin">
-                                    <label>邮箱 <span class="text-danger">*</span>@if(isset($errors)) {{ $errors->first('email') }} @endif</label>
-                                    <input type="text" class="form-control">
+                                    <label>邮箱 <span class="text-danger">*@if(isset($errors)) {{ $errors->first('email') }} @endif</span></label>
+                                    <input type="text" name="email" value="{{ old('email') }}" class="form-control" placeholder="邮箱地址">
                                 </div>
 
                                 <div class="row top-margin">
                                     <div class="col-sm-6">
-                                        <label>密码 <span class="text-danger">*</span>@if(isset($errors)) {{ $errors->first('password') }} @endif</label>
-                                        <input type="text" class="form-control">
+                                        <label>密码 <span class="text-danger">*@if(isset($errors)) {{ $errors->first('password') }} @endif</span></label>
+                                        <input type="password" name="password" class="form-control" placeholder="密码">
                                     </div>
                                     <div class="col-sm-6">
                                         <label>确认密码<span class="text-danger">*</span></label>
-                                        <input type="text" class="form-control">
+                                        <input type="password" name="password_confirmation" class="form-control" placeholder="确认密码">
                                     </div>
                                 </div>
 

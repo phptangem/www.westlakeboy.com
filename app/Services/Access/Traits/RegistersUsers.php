@@ -21,8 +21,16 @@ trait RegistersUsers
     {
         //参数验证
         //参数接受
-        dd($request);
         //注册入库
+        if(config('access.users.confirm_email')){
+            $user = $this->users->create($request->all());
+            event(new UserRegistered($user));
+            return redirect()->route('frontend.index')->withFlashSuccess('');
+        }else{
+            Auth()->login($this->users->create($request->all()));
+            event(new UserRegistered(access()->user()));
+            return redirect($this->redirectPath());
+        }
         //页面重定向
     }
 }

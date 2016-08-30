@@ -19,5 +19,10 @@ class EloquentUserRepository implements UserRepositoryContract
                 'status'            => 1
             ]);
         }
+
+        //赋予默认权限
+        $user->attachRoles($this->defaultRoles());
+
+        //发送邮件
     }
 }
